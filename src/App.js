@@ -7,8 +7,9 @@ import "./Footer.css";
 import React from "react";
 import MyNavbar from "../src/components/MyNavbar";
 import MyFooter from "../src/components/MyFooter";
-import Homepage from "../src/components/Homepage";
-import Gallery from "../src/components/Gallery";
+ import Homepage from "../src/components/Homepage";
+ import Gallery from "../src/components/Gallery";
+// import Profile from "../src/components/Profile"
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
         <MyNavbar />
       </header>
       <main>
+      {/* <Profile /> */}
+
       <Homepage/>
 
       <Gallery title="Spider-Man" />
