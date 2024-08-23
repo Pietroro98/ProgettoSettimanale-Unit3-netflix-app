@@ -1,0 +1,28 @@
+.navbar {
+    background-color: black;
+    padding: 10px 20px;
+}
+
+.navbar-brand img {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    opacity: 0.8;
+}
+
+.nav-link {
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: gray;
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    border-color: white;
+}

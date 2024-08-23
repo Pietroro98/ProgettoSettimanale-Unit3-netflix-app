@@ -1,0 +1,50 @@
+.footer {
+  color: white;
+  font-size: 0.8em;
+}
+
+.footer p,
+.footer a {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+.footer p:hover,
+.footer a:hover {
+  color: white;
+}
+
+.footer-icon {
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.footer .footer-icon:hover {
+  color: white;
+}
+
+.footer button {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.footer button:hover {
+  background-color: gray;
+  color: white;
+}
+
+.overfooter:hover {
+  scale: 1.1;
+  opacity: 1;
+  color: white;
+  cursor:pointer
+}
+
+.overb:hover {
+  scale: 1.1;
+  background-color: white; 
+  color: black !important; 
+}
+
+
