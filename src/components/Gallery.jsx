@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Carousel, Container, Row, Col } from 'react-bootstrap';
+import { Carousel, Container, Row, Col, Alert } from 'react-bootstrap';
+import Spinner from "react-bootstrap/Spinner";
 
 class Gallery extends Component {
   state = {
     movies: [],
+    isLoading: true,
+    isError: false,
   };
 
   componentDidMount() {
@@ -19,7 +22,11 @@ class Gallery extends Component {
       const response = await fetch(url);
       const data = await response.json();
       if (data.Response === "True") {
-        this.setState({ movies: data.Search });
+        this.setState({ movies: data.Search,
+          isLoading: false,
+          isError: true,
+         });
+        
       }
     } catch (error) {
       console.error("Errore nel fetch dei dati:", error);
@@ -37,7 +44,17 @@ class Gallery extends Component {
 
     return (
       <Container fluid className='w-75 gallerys'>
-        <h4>{this.props.title}</h4>
+        <h4>{this.props.title}
+        {this.state.isLoading && (
+                <Spinner animation="border" variant="info" />
+              )}
+              {/* {this.state.isError && (
+                <Alert variant="danger">
+                  Ops! Qualcosa è andato storto
+                  <i className="bi bi-exclamation-triangle"></i>
+                </Alert>
+              )}  togliere il commento per vedere se ce errore*/}
+        </h4>
         <Carousel indicators={false} controls={true} className="mb-5">
           {groupedMovies.map((group, index) => (
             <Carousel.Item key={index} className="mt-2">
